@@ -69,15 +69,7 @@ int main()
 
     // Inicializa o tempo da última interação
     ultima_interacao = get_absolute_time();
-/*
-    // Atualiza o conteúdo do display com animações
-    ssd1306_fill(&ssd, !cor); // Limpa o display
-    ssd1306_rect(&ssd, 3, 3, 122, 58, cor, !cor); // Desenha um retângulo
-    ssd1306_draw_string(&ssd, "CEPEDI   TIC37", 8, 10); // Desenha uma string
-    ssd1306_draw_string(&ssd, "EMBARCATECH", 20, 30); // Desenha uma string
-    ssd1306_draw_string(&ssd, "HEBERT SANTANA", 8, 48); // Desenha uma string      
-    ssd1306_send_data(&ssd); // Atualiza o display
-*/
+
     sleep_ms(1000);
 
     while (true)
@@ -139,7 +131,6 @@ int main()
         cor = !cor;
         if (stdio_usb_connected())
         {   
-            
             // Certifica-se de que o USB está conectado
             // Captura caractere do teclado sem bloquear a execução
             int ch = getchar_timeout_us(0);
